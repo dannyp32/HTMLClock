@@ -4,9 +4,13 @@
         var now     = new Date(); 
         var hour    = now.getHours();
         var minute  = now.getMinutes();
-
+        var seconds = now.getSeconds();
+        
         if(minute.toString().length == 1) {
             var minute = '0' + minute;
+        }
+        if(seconds.toString().length == 1) {
+            var seconds = '0' + seconds;
         }
         
         if (hour === 0) {
@@ -16,19 +20,13 @@
             hour = hour - 12;
         }
         
-        var time = hour+':'+minute;   
+        var time = { 
+            hour: hour, 
+            minute: minute, 
+            seconds: seconds 
+        };
+        
         return time;
-    }
-    
-    var getSeconds = function() {
-        var now = new Date();
-        var seconds = now.getSeconds();
-        
-        if(seconds.toString().length == 1) {
-            var seconds = '0' + seconds;
-        }
-        
-        return seconds;
     }
     
     function getDate() {
@@ -45,16 +43,22 @@
             var day = '0'+day;
         }   
 
-        var date = dayOfWeek + ", " + month + " " + day + ", " + year;   
+        var date = dayOfWeek + ", " + month + " " + day + ", " + year;
         return date;
     }
     
     var updateTime = function () {
-        $('.time').html(getTime() + '<span class=seconds>:'+getSeconds()+'</span>');
+        var t = getTime();
+        $('.time').html(t.hour + ":" + t.minute + '<span class=seconds>:'+ t.seconds +'</span>');
+        
+        if (t.minute === '00') {
+            $('.date').text(getDate());
+        }
         
         setTimeout(updateTime, 1000);    
     }
     
     updateTime();
     $('.date').text(getDate());
+    
 })(jQuery);
