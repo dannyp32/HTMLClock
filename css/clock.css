@@ -56,7 +56,7 @@ body {
     font-weight: 100;
 }
 
-.location, .time, .date {
+.location, .time, .date, .alarm-count {
     text-align: center;
     font-family: Lato, sans-serif;
 }
@@ -67,6 +67,13 @@ body {
     margin-bottom: 10px;
     border-top: 1px solid #d35726;
     background-color: #f77e4f;
+}
+
+.alarm-count {
+    margin-top: 20px;
+    font-weight: 600;
+    color: white;
+    font-size: 16px;
 }
 
 
