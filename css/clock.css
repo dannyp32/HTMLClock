@@ -56,7 +56,7 @@ body {
     font-weight: 100;
 }
 
-.location, .time, .date, .alarm-count {
+.location, .time, .date, .alarm-count, .degrees, .weather-description {
     text-align: center;
     font-family: Lato, sans-serif;
 }
@@ -76,4 +76,52 @@ body {
     font-size: 16px;
 }
 
+.weather-container {
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 50px;
+}
 
+.weather {
+    float: left;
+    width: 100px;
+    height: 150px;
+    background: no-repeat top center;
+    margin: 10px;
+}
+
+
+@media (max-width: 600px) {
+    .weather-container {
+        width: 100%;
+    }
+    
+    .weather {
+        clear: both;
+        width: 100%;
+    }
+}
+
+.weather-icon {
+    display: block;
+    margin: auto;
+}
+
+.degrees {
+    color: white;
+    font-size: 32px;
+    font-weight: 100;
+    margin-top: 10px;
+    
+}
+
+.degrees-symbol {
+    font-size: 14px;
+    vertical-align: top;
+}
+
+.weather-description {
+    color: white;
+    font-weight: 100;
+    font-size: 18px;
+}
