@@ -10,7 +10,7 @@
     
     var getWeather = function(geo) {
         $.ajax({
-            url:"https://api.forecast.io/forecast/f6bf5ad03324ee03295b1ad3ad9feff1/" + geo.coords.latitude + "," + geo.coords.longitude,
+ url:"https://api.forecast.io/forecast/f6bf5ad03324ee03295b1ad3ad9feff1/" + geo.coords.latitude + "," + geo.coords.longitude,
             dataType: 'jsonp', // Notice! JSONP <-- P (lowercase)
             success: function (weatherData) {
                 console.log(weatherData);
@@ -25,12 +25,11 @@
     var displayWeather = function(weatherData) {
         if (weatherData) {
             dailyWeather = weatherData.daily.data;
-debugger;
-                            $("#day0").css("background", 'url("../images/' + dailyWeather[0].icon + '.png"' );
+            
             for (var i = 0; i < 5; i++) {
                 $("#day" + i).html(
                     '<img class="weather-icon" src="../images/' + dailyWeather[i].icon + '.png"></img>' + 
-                    '<div class="degrees">' + (dailyWeather[i].apparentTemperatureMax | 0) + '<span class="degrees-symbol">°</span></div>' + 
+                    '<div class="degrees">' + (dailyWeather[i].TemperatureMax | 0) + '<span class="degrees-symbol">°</span></div>' + 
                     '<div class="weather-description">' + getWeatherDescription(dailyWeather[i].icon) + '</div>'
                 );         
             }
