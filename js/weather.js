@@ -28,7 +28,7 @@
             
             for (var i = 0; i < 5; i++) {
                 $("#day" + i).html(
-                    '<img class="weather-icon" src="../images/' + dailyWeather[i].icon + '.png"></img>' + 
+                    '<img class="weather-icon" src="images/' + dailyWeather[i].icon + '.png"></img>' + 
                     '<div class="degrees">' + (dailyWeather[i].TemperatureMax | 0) + '<span class="degrees-symbol">°</span></div>' + 
                     '<div class="weather-description">' + getWeatherDescription(dailyWeather[i].icon) + '</div>'
                 );         
