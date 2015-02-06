@@ -16,6 +16,61 @@
             <div class="divider"></div>
         </div>
         <div class="alarm-count">No Alarms Set.</div>
+        
+        <div id="alarmContainer">
+            <div id="alarmHeader" class="flexable">
+                <h2>Alarms</h2>
+                <input type="button" value="Add Alarm" class="button" onclick="showAlarmPopup()"/>
+            </div>
+            <div id="alarms"></div>
+        </div> 
+
+        <div id="mask"class="hide"></div>
+
+        <div id="popup" class="hide">
+            <h2>Add Alarm</h2>
+            <div id="timeContainer">
+                <select id="hours">
+                    <option>01</option>
+                    <option>02</option>
+                    <option>03</option>
+                    <option>04</option>
+                    <option>05</option>
+                    <option>06</option>
+                    <option>07</option>
+                    <option>08</option>
+                    <option>09</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                </select>
+                <select id="mins">
+                    <option>00</option>
+                    <option>02</option>
+                    <option>03</option>
+                    <option>04</option>
+                    <option>05</option>
+                    <option>06</option>
+                    <option>07</option>
+                    <option>08</option>
+                    <option>09</option>
+                    <option>10</option>
+                    <option>11</option>
+                    <option>12</option>
+                </select>
+                <select id="ampm">
+                    <option>am</option>
+                    <option>pm</option>
+                </select>
+            </div>
+            <input type="text" id="alarmName" placeholder="Alarm Name" />      
+            <div class="flexable">
+                <input type="button" value="Cancel" class="button" onClick="hideAlarmPopup()"/>
+                <input type="button" value="Save Alarm" class="button" onClick="addAlarm()"/>
+            </div>
+        </div>
+
+
         <div class="weather-container">
             <div class="weather" id="day0"></div>
             <div class="weather" id="day1"></div>
@@ -27,5 +82,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script language="javascript" type="text/javascript" src="js/clock.js"></script>
         <script language="javascript" type="text/javascript" src="js/weather.js"></script>
+        <script language="javascript" type="text/javascript" src="js/alarm.js"></script>
+
     </body>
 </html>
