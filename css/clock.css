@@ -212,7 +212,7 @@ h2 {
 	margin:10px auto 25px auto;
 }
 
-.name {
+.name, .alarm-time {
     margin-right: 20px;
 }
 
