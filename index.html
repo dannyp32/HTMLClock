@@ -6,7 +6,16 @@
         <link rel="stylesheet" type="text/css" href="css/clock.css">
         <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
     </head>
-    <body>
+    <body>        
+        <div class="sidebar">
+            <div class="title">ALARMS</div>
+            <div class="alarms">
+
+            </div>
+            <div class="new-alarm" onclick="showAlarmPopup()">
+            Add New Alarm</div>
+        </div>
+        <div class="main-content">
         <div class="container">
             <div class="time-section">
                 <div class="location">San Luis Obispo</div>
@@ -16,15 +25,7 @@
             <div class="divider"></div>
         </div>
         
-        <div id="alarmContainer">
-            <div id="alarmHeader" class="flexable">
-                <h2>Alarms</h2>
-                <input type="button" value="Add Alarm" class="button" onclick="showAlarmPopup()"/>
-            </div>
-            <div id="alarms"></div>
-        </div> 
-
-        <div id="mask"class="hide"></div>
+        <div id="mask" class="hide"></div>
 
         <div id="popup" class="hide">
             <h2>Add Alarm</h2>
@@ -56,14 +57,14 @@
                 <input type="button" value="Save Alarm" class="button" onClick="addAlarm()"/>
             </div>
         </div>
-
-
         <div class="weather-container">
             <div class="weather" id="day0"></div>
             <div class="weather" id="day1"></div>
             <div class="weather" id="day2"></div>
             <div class="weather" id="day3"></div>
             <div class="weather" id="day4"></div>
+        </div>
+        
         </div>
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

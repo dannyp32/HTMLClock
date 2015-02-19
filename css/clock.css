@@ -4,9 +4,13 @@ body {
     margin: 0;
 }
 
+.main-content {
+    transition: padding-left ease 1s;
+    padding-left: 220px;
+}
 .container {
     background-color: #ef7442;
-    width: 40%;
+    width: 70%;
     border-radius: 6px;
     box-shadow: 0px 1px 8px rgba(0, 0, 0, .4);
     border: 1px solid #d35726;
@@ -17,13 +21,16 @@ body {
 
 @media (max-width: 650px) {
     .container {
-        width: 55%;
+        width: 90%;
+        min-width: 250px;
+        margin: 10px;
+        margin-top: 100px;
     }
 }
 
 @media (min-width: 960px) {
     .container {
-        width: 30%;
+        width: 50%;
     }
 }
 
@@ -57,7 +64,7 @@ body {
     font-weight: 100;
 }
 
-.location, .time, .date, .alarm-count, .degrees, .weather-description {
+.location, .time, .date, .alarm-count, .degrees, .weather-description, #alarmContainer {
     text-align: center;
     font-family: Lato, sans-serif;
 }
@@ -92,7 +99,7 @@ body {
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
     .weather-container {
         width: 100%;
     }
@@ -127,37 +134,144 @@ body {
     font-size: 18px;
 }
 
+.sidebar {
+    position: fixed;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: #525655;
+    transition: width ease 1s;
+    width: 240px;
+    font-family: Lato, sans-serif;
+
+}
+
+.sidebar > .title {
+    font-size: 13px;
+    font-weight: 900;
+    line-height: 30px;
+    padding: 10px;
+    color: white;
+}
+
+.alarms {
+    color: white;
+    font-size: 14px;
+    padding: 10px;
+}
+
+.new-alarm {
+    width: 180px;
+    height: 40px;
+    background-color: #EF7442;
+    border-radius: 3px;
+    border: inset 1px solid #bc4d21;
+    text-align: center;
+    line-height: 40px;
+    color: white;
+    margin: 0 auto;
+    position:absolute;
+    bottom: 20px;
+    left: 20px;
+    
+}
+.name-and-time {
+    width: 140px;
+}
+.alarm-wrapper {
+    margin-bottom: 15px;
+}
+.alarm-wrapper > div {
+    display: inline-block;
+    margin: 0;
+}
+
+.alarm-wrapper .alarm-time {
+    font-size: 20px;
+    font-weight: 100;
+    
+}
+
+.alarm-wrapper .alarm-name {
+    font-size: 16px;
+}
+
+.alarm-wrapper > .alarm-trash {
+    margin-left: 12px;
+    cursor: pointer;
+}
+
+.switch {
+    width: 50px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #686d6c;
+    border: 1px solid #404443;
+    position: relative;
+    vertical-align: bottom;
+    
+}
+
+.switch:before {
+    content: 'on';
+    position: absolute;
+    left: 6px;
+    font-weight: 900;
+}
+
+.switch.off:before {
+    content:'off';
+    position: absolute;
+    left: 24px;
+    
+}
+
+.switch > .circle {
+    transition: ease .4s;
+    left: 32px;
+    top: 0px;
+}
 
 
-/***** Alarm CSS *****/
-h2 {
-	color:#777;
-	margin-top:0px;
+.switch.off > .circle {
+    transition: ease .4s;
+    left: -2px;
 }
-.hide {
-	display:none;
+
+.switch > span {
+    top: 0px;
+    left: 8px;
+    font-family: Lato, sans-serif;
+    font-size: 14px;
+    font-weight: 900;
 }
-.button {
-	display:block;
-	margin:10px auto;
-	width:100px;
-	padding:10px 10px;
+
+.circle {
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    border-radius: 10px;
+    border: 1px solid #e8efed;
+    background-color: #dce5e2;
 }
-.flexable {
-	display: -webkit-box;
-	display: -moz-box;
-	display: -ms-flexbox;
-	display: -webkit-flex;
-	display: flex;
-	-webkit-flex-flow: nowrap;
+
+/*
+.sidebar:hover {
+    transition: width ease 1s;
+    width: 220px;
 }
+*/
+.sidebar:mouseout {
+    transition: width ease 1s;
+    height: 50px;
+}
+
 /********** The container that holds the alarm section *********/
 #alarmContainer {
-	width:500px;
+	width: 300px;
 	margin:0px auto;
-	background:#ecf0f1;
+	background:#fff;
 	color:#777;
-	padding:20px;
 }
 #alarmHeader {
 	position:relative;
@@ -214,5 +328,13 @@ h2 {
 
 .name, .alarm-time {
     margin-right: 20px;
+}
+
+
+
+
+
+.hide {
+	display:none;
 }
 
