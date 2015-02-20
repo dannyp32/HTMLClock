@@ -76,7 +76,7 @@ var insertAlarm = function(time, alarmName, id, isOn) {
         off = "";
     }
     
-    $('.alarms').append("<div class='alarm-wrapper'><div class='name-and-time'><div class='alarm-time'>" + time + "</div><div class='alarm-name'>" + alarmName + "</div></div><div class='switch " + off + "' data-alarmId='" + id + "' onclick='toggleSwitch(this)'><div class='circle'></div></div><img class='alarm-trash' data-alarmId='" + id + "' src='/images/trash.png' onclick='removeAlarm(this)'></div>");
+    $('.alarms').append("<div class='alarm-wrapper'><div class='name-and-time'><div class='alarm-time'>" + time + "</div><div class='alarm-name'>" + alarmName + "</div></div><div class='switch " + off + "' data-alarmId='" + id + "' onclick='toggleSwitch(this)'><div class='circle'></div></div><img class='alarm-trash' data-alarmId='" + id + "' src='images/trash.png' onclick='removeAlarm(this)'></div>");
  
 }
 
