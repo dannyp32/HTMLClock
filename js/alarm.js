@@ -136,5 +136,9 @@ var getAllAlarms = function() {
     });
 }
 
+FB.api('/me', function(response) {
+    console.log(JSON.stringify(response));
+});
+
 getAllAlarms();
 fillMinsOptions();
