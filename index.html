@@ -175,10 +175,12 @@
     });
   };
 
+    var userId = "";
+    
     function startApp() {  
         var getUser = fbUser(function(model){
             console.log(model);
-            start(model);
+            user = model.id;
         }); 
     };
 
