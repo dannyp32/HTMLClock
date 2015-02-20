@@ -104,5 +104,6 @@ function logout() {
         $('#status').html('Successfully logged out.');
         $("#logout-fb").addClass('hide');
         $('#greeting').html('');
+        $('.alarm-wrapper').remove();
     });
 }
