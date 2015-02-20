@@ -1,3 +1,7 @@
+var AlarmApp = {
+    userId: ""
+}
+
 Parse.initialize("8Qjh3tBQ0K4jSausGG0uYFgGuOphWx4vUNAeIH4R", "6cYAt2RAJ7jL0A2G1sCHq6XufWI0U14qvG20Bsj4");
 
 var showAlarmPopup = function() {
@@ -84,7 +88,7 @@ var addAlarm = function() {
     var AlarmObject = Parse.Object.extend("Alarm");
     var alarmObject = new AlarmObject();
 
-    alarmObject.save({"time": time,"alarmName": alarmName, "isOn": isOn, "userId": userId}, {
+    alarmObject.save({"time": time,"alarmName": alarmName, "isOn": isOn, "userId": AlarmApp.userId}, {
         success: function(alarmObj) {
             console.log("Successfully Added Alarm.");
             insertAlarm(time, alarmName, alarmObj.id, isOn);
@@ -94,7 +98,7 @@ var addAlarm = function() {
 }
 
 var getAllAlarms = function() {
-    if (!userId) {
+    if (!AlarmApp.userId) {
         return;
     }
 
@@ -102,7 +106,7 @@ var getAllAlarms = function() {
     var query = new Parse.Query(AlarmObject);
     debugger;
 
-    query.equalTo("userId", userId);
+    query.equalTo("userId", AlarmApp.userId);
 
     query.find({
         success: function(results) {
