@@ -8,13 +8,14 @@
     </head>
     <body>        
         <div class="sidebar">
+            <div id="greeting"></div>
             <div class="title">ALARMS</div>
             <div class="alarms">
             </div>
 
             <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
             </fb:login-button>
-            <button onclick="logout()">logout</button>
+            <button id="logout-fb" class="hide" onclick="logout()">logout</button>
             <div id="status">
             </div>
             <div class="new-alarm" onclick="showAlarmPopup()">
