@@ -137,6 +137,7 @@ var getAllAlarms = function() {
 }
 
 FB.api('/me', function(response) {
+    debugger;
     console.log(JSON.stringify(response));
 });
 
