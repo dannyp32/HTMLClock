@@ -27,13 +27,11 @@
       testAPI();
     } else if (response.status === 'not_authorized') {
       // The person is logged into Facebook, but not your app.
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into this app.';
+
     } else {
       // The person is not logged into Facebook, so we're not sure if
       // they are logged into this app or not.
-      document.getElementById('status').innerHTML = 'Please log ' +
-        'into Facebook.';
+
     }
   }
 
@@ -92,6 +90,7 @@
         $('#greeting').html("Hi " + response.name + "!");  
         $("#logout-fb").removeClass('hide');
         AlarmApp.userId = response.id;
+        $('.alarm-wrapper').remove();
         getAllAlarms();
         
     });
@@ -101,7 +100,7 @@ function logout() {
     FB.logout(function(response) {
         console.log(response);
         console.log("Successfully logged out.");
-        $('#status').html('Successfully logged out.');
+        AlarmApp.userId = "";
         $("#logout-fb").addClass('hide');
         $('#greeting').html('');
         $('.alarm-wrapper').remove();
