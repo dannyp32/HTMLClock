@@ -163,6 +163,7 @@
     fjs.parentNode.insertBefore(js, fjs);
   }(document, 'script', 'facebook-jssdk'));
 
+            
   // Here we run a very simple test of the Graph API after login is
   // successful.  See statusChangeCallback() for when this call is made.
   function testAPI() {
@@ -171,8 +172,23 @@
       console.log('Successful login for: ' + response.name);
       document.getElementById('status').innerHTML =
         'Thanks for logging in, ' + response.name + '!';
+      getAllAlarms(response.id);    
     });
   }
+
+    function startApp() {  
+        var getUser = fbUser(function(model){
+            console.log(model);
+            start(model);
+        }); 
+    };
+
+    function fbUser(callback){  
+        FB.api('/me', function(response){
+        callback(response);
+    });
+}       
+  
 </script>
 
     </body>
