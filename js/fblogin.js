@@ -96,3 +96,11 @@
         
     });
   };  
+
+function logout() {
+    FB.logout(function(response) {
+        console.log(response);
+        console.log("Successfully logged out.");
+        // Person is now logged out
+    });
+}
