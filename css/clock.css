@@ -173,6 +173,7 @@ body {
     position:absolute;
     bottom: 20px;
     left: 20px;
+    cursor: pointer;
     
 }
 .name-and-time {
@@ -330,11 +331,26 @@ body {
     margin-right: 20px;
 }
 
-
-
-
-
 .hide {
 	display:none;
 }
 
+#logout-fb {
+    background-color: #4a79d6;
+    outline: none;
+    border: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 2px;
+    height: 22px;
+    padding-top: -4px;
+    cursor: pointer;
+    vertical-align: top;
+}
+
+#greeting {
+    color: white;
+    padding: 10px;
+    font-weight: 900px;
+    font-size: 16px;
+}
