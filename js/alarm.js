@@ -68,9 +68,17 @@ var removeAlarm = function(obj) {
 
     query.get(id, {
         success: function(alarmObj) {
-            console.log("Alarm Object was retrieved successfully");
-            alarmObj.destroy({});
-            $(obj).parent().remove();
+            alarmObj.destroy({
+                success: function(destroyedObj) {
+                    console.log("Alarm Object was deleted successfully");
+                    $(obj).parent().remove();
+                    ga('send', 'event', 'Alarm', 'Delete');
+                },
+                error: function(objNotDestroyed, error) {
+                    console.log("Alarm could not be deleted.");
+                }
+            });
+            
         },
         error: function(object, error) {
             console.log("Alarm Object could not be retrieved");
@@ -91,6 +99,7 @@ var addAlarm = function() {
     alarmObject.save({"time": time,"alarmName": alarmName, "isOn": isOn, "userId": AlarmApp.userId}, {
         success: function(alarmObj) {
             console.log("Successfully Added Alarm.");
+            ga('send', 'event', 'Alarm', 'Add');
             insertAlarm(time, alarmName, alarmObj.id, isOn);
             hideAlarmPopup();
         }
