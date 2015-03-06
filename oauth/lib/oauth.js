@@ -30,9 +30,10 @@ var cb = function(token) {
     
     $.ajax({
         url: url,
+        method: 'GET',
         dataType: 'json',
         headers: {
-            "Authorization" : token  
+            "Authorization" : "Bearer " + token  
         }
     }).done(function(data) {
         console.log(data);
