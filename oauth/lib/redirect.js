@@ -13,7 +13,7 @@ var extractError = function(hash) {
 };
 
 var redirect_init = function() {
-    var error = extractError(location.hash);
+    var error = extractError(document.URL);
     
     if (error) {
         console.log(error);
