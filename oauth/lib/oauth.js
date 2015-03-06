@@ -32,7 +32,7 @@ var cb = function(token) {
         url: url,
         dataType: 'json',
         headers: {
-            "Authorization" : bearer_token  
+            "Authorization" : token  
         }
     }).done(function(data) {
         console.log(data);
