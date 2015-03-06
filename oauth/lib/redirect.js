@@ -1,4 +1,4 @@
-window.ready = redirect_init();
+window.ready = redirect_init;
 
 var redirect_init = function() {
     var params = {}, queryString = location.hash.substring(1),
