@@ -20,6 +20,25 @@ var login = function(url) {
     window.open(url, "popup", width=300, height=200);
 }
 
-var cb = function() {
+var cb = function(token) {
+    if (!token) {
+        console.log("The token wasn't passed along correctly.");
+        return;
+    }
     
+    var url = "https://api.imgur.com/3/account/me";
+    
+    $.ajax({
+        url: url,
+        dataType: 'json',
+        headers: {
+            "Authorization" : bearer_token  
+        }
+    }).done(function(data) {
+        console.log(data);
+        alert("Hello " + data.data.url + "!");
+    }).fail(function(jqXHR, textStatus, errorThrown ) {
+        console.log("Something went wrong");
+        console.log(errorThrown);
+    });
 }
