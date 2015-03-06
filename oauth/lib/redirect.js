@@ -27,7 +27,10 @@ var redirect_init = function() {
     while (m = regex.exec(queryString)) {
       params[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
     }
-        
-    window.opener.cb(params.access_token);
+
+    if (window.opener.oauth.callback) {
+        window.opener.oauth.callback(params.access_token);
+    }
+
     window.close();
 }

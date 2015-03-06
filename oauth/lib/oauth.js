@@ -1,7 +1,7 @@
 var oauth = {};
 
 window.onload = function() {
-    init("749ac76825478dc", "token", "cb");
+    init("749ac76825478dc", "token", cb);
 }
 
 var init = function(client_id, type, callback) {
