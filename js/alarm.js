@@ -113,8 +113,6 @@ var getAllAlarms = function() {
 
     var AlarmObject = Parse.Object.extend("Alarm");
     var query = new Parse.Query(AlarmObject);
-    debugger;
-
     query.equalTo("userId", AlarmApp.userId);
 
     query.find({
